@@ -33,7 +33,7 @@ jobs:
       run: npm run server-backend &
 
     - name: Start the frontend server
-      run: nmp run start-frontend &
-      
+      run: npm run start-frontend &
+
     - name: Run tests
       run: npm run test

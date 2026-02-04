@@ -16,18 +16,24 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v4
+
     - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: 'npm'
+
     - name: Install dependencies
       run: npm install
+
     - name: Install Playwright browsers
       run: npx playwright install
+
     - name: Start the backend server   
       run: npm run server-backend &
+
     - name: Start the frontend server
       run: nmp run start-frontend &
+      
     - name: Run tests
       run: npm run test
